@@ -907,6 +907,41 @@
       padding-block: calc(var(--spacing) * 5);
     }
   }
+  .max-sm\:active\:border-naranja {
+    @media (width < 40rem) {
+      &:active {
+        border-color: var(--color-naranja);
+      }
+    }
+  }
+  .max-sm\:active\:bg-negrito {
+    @media (width < 40rem) {
+      &:active {
+        background-color: var(--color-negrito);
+      }
+    }
+  }
+  .max-sm\:active\:bg-verdesito {
+    @media (width < 40rem) {
+      &:active {
+        background-color: var(--color-verdesito);
+      }
+    }
+  }
+  .max-sm\:active\:text-negrito {
+    @media (width < 40rem) {
+      &:active {
+        color: var(--color-negrito);
+      }
+    }
+  }
+  .max-sm\:active\:text-verdesito {
+    @media (width < 40rem) {
+      &:active {
+        color: var(--color-verdesito);
+      }
+    }
+  }
   .sm\:mt-0 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 0);
