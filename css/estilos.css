@@ -892,6 +892,41 @@
       border-color: var(--color-verdesito);
     }
   }
+  .max-lg\:active\:border-naranja {
+    @media (width < 64rem) {
+      &:active {
+        border-color: var(--color-naranja);
+      }
+    }
+  }
+  .max-lg\:active\:bg-negrito {
+    @media (width < 64rem) {
+      &:active {
+        background-color: var(--color-negrito);
+      }
+    }
+  }
+  .max-lg\:active\:bg-verdesito {
+    @media (width < 64rem) {
+      &:active {
+        background-color: var(--color-verdesito);
+      }
+    }
+  }
+  .max-lg\:active\:text-negrito {
+    @media (width < 64rem) {
+      &:active {
+        color: var(--color-negrito);
+      }
+    }
+  }
+  .max-lg\:active\:text-verdesito {
+    @media (width < 64rem) {
+      &:active {
+        color: var(--color-verdesito);
+      }
+    }
+  }
   .max-sm\:grid-cols-1 {
     @media (width < 40rem) {
       grid-template-columns: repeat(1, minmax(0, 1fr));
