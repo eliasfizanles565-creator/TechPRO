@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primario: #1073BA;
+    --color-secundario: #00DA55;
+    --color-verdeloco: #20d200;
+    --color-verdesito: #caf438;
+    --color-gris: #3B3B3B;
+    --color-blanco: #FFFFFF;
+    --color-negro: #1F1E1E;
+    --color-negrito: #001925;
+    --color-grisClaro: #e1e1e1;
+    --color-naranja: #ff7a01;
+    /* --color-azulino: #002733; */
+    --color-azulino: #192427;
+    
+
+    --font-principal: "Roboto", sans-serif; 
+    --font-secundaria: "Lato", sans-serif;
+
+    --breakpoint-md: 50rem;
+    --breakpoint-mx: 47rem;
+
+}
+
+
+
+
+@layer base {
+
+    body {
+        @apply font-principal cursor-[url('../assets/puntero3.png'),pointer]
+    }
+
+
+
+    h1,h2,h3 {
+        @apply font-secundaria
+    }
+
+    p {
+        @apply text-sm/5.5
+    }
+
+    
+
+}
+
+
+@layer components {
+    .card {
+        @apply m-10 bg-red-800 w-max text-5xl font-bold rounded-4xl px-4 py-2 text-white
+    }
+}
+
+
+
+
+/* "CLASE" PARA QUE FUNCIONE EL DEGRADADO */
+.degradado{
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+/* ."clase" para que funcione el degradado */
+
+
+/* SEPARAR PALABRAS ENTERAS */
+.spaceletter{
+    word-spacing: 3px;
+}
+
+.spaceletter2{
+    word-spacing: 7px;
+}
+/* .separar palabras enteras */
+
+
+/* TEXTO SIN FONDO CON BORDES */
+.texto-hueco {
+  /* 2. Definimos el contorno (grosor y color) */
+  /* Usamos -webkit- porque es el estándar que aceptan casi todos los navegadores */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-amber-700); /* Aquí pon tu color primario o secundario */
+}
+/* .texto sin fondo con bordes */
+
+
+/* HOVER PRINCIPAL EXAGERADO */
+.hover1 {
+    transition: 0.3s ease-out;
+}
+
+.hover1:hover {
+    background-color: rgb(12, 10, 9);
+    transform: rotate(-5deg) scale(1.10);
+}
+
+.hover2 {
+    transition: 0.3s ease-out;
+    transform: rotate(0deg) scale(1);
+}
+
+.hover5 {
+    background-color: var(--color-azulino);
+    transition: 0.3s ease-out;
+}
+
+.hover1:hover .hover2{
+    transform: rotate(10deg) scale(1.10);
+}
+
+.hover1:hover .hover5{
+    background-color: var(--color-negrito);
+}
+/* .hover principal exagerado */
+
+
+/* HOVER DE BORDES VERDE AL COSTADO */
+.hover6{
+    border-left: 0px solid var(--color-verdesito);
+    border-right: 0px solid var(--color-verdesito);
+    transition: 0.3s ease-out;
+}
+
+.hover6:hover {
+    border-left: 5px solid var(--color-verdesito);
+    border-right: 5px solid var(--color-verdesito);
+}
+/* .hover de bordes verde al costado */
+
+
+/* ANIMATION DE SALTO */
+@keyframes salto-suave {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.2, 0.3, 0.5, 0.8);
+  }
+  50% {
+    transform: translateY(-25px); /* <--- Aquí controlas la altura del salto */
+    animation-timing-function: cubic-bezier(0, 0.2, 0.6, 0.8);
+  }
+}
+
+.tarjeta-salta {
+  animation: salto-suave 1.5s infinite;
+}
+/* .animation de salto */
+
+
+/* HOVER SECUNDARIO RECATADO */
+.hover3 {
+    transition: 0.2s ease-out;
+}
+
+.hover3:hover {
+    background-color: rgb(10, 10, 10);
+    transform: rotate(-5deg) scale(1.02);
+    
+}
+
+.hover4 {
+    transition: 0.2s ease-out;
+    transform: rotate(0deg) scale(1);
+}
+
+.hover3:hover .hover4{
+    transform: rotate(10deg) scale(1.02);
+}
+/* .hover secundario recatado */
+
+
+
+/* MEDIA QUERIERS */
+
+/* >= 640px */
+@media (min-width: 640px) {
+    .hover1 {
+        transition: 0.3s ease-out;
+    }
+
+    .hover1:hover {
+        background-color: rgb(12, 10, 9);
+        transform: rotate(-5deg) scale(1.10);
+        
+    }
+
+    .hover2 {
+        transition: 0.3s ease-out;
+        transform: rotate(0deg) scale(1);
+    }
+
+    .hover1:hover .hover2{
+        transform: rotate(10deg) scale(1.10);
+    }
+}
+
+
+/* <= 639px */
+@media (max-width: 639px) {
+    .hover3 {
+        transition: 0.2s ease-out;
+    }
+
+    .hover3:hover {
+        background-color: rgb(10, 10, 10);
+        transform: rotate(-5deg) scale(1.02);
+        
+    }
+
+    .hover4 {
+        transition: 0.2s ease-out;
+        transform: rotate(0deg) scale(1);
+    }
+
+    .hover3:hover .hover4{
+        transform: rotate(10deg) scale(1.02);
+    }
+} 
+
+/* .media queriers */
